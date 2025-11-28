@@ -1,0 +1,23 @@
+# Игнорируемые файлы и папки
+
+# Документация для разработки (не нужна на GitHub Pages)
+QUICKSTART.md
+README.md
+ANALYSIS.md
+
+# Настройки VS Code (индивидуальные для каждого разработчика)
+.vscode/
+
+# Системные файлы Windows
+Thumbs.db
+desktop.ini
+
+# Системные файлы macOS
+.DS_Store
+
+# Логи
+*.log
+
+# Временные файлы
+*.tmp
+*.temp
