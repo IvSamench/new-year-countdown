@@ -1,19 +1,19 @@
 const CACHE_NAME = 'new-year-countdown-v1';
 const urlsToCache = [
-  '/',
-  '/Index.html',
-  '/styles.css',
-  '/manifest.json',
-  '/scripts/script.js',
-  '/scripts/userTime.js',
-  '/scripts/countDown.js',
-  '/images/99px_ru_wallpaper_354617_novogodnjaja_elka_na_puti_k_cerkvi.jpg',
-  '/icons/apple-touch-icon.png',
-  '/icons/favicon-96x96.png',
-  '/icons/web-app-manifest-192x192.png',
-  '/icons/web-app-manifest-512x512.png',
-  '/icons/favicon.svg',
-  '/icons/favicon.ico'
+  '/new-year-countdown/',
+  '/new-year-countdown/Index.html',
+  '/new-year-countdown/styles.css',
+  '/new-year-countdown/manifest.json',
+  '/new-year-countdown/scripts/script.js',
+  '/new-year-countdown/scripts/userTime.js',
+  '/new-year-countdown/scripts/countDown.js',
+  '/new-year-countdown/images/99px_ru_wallpaper_354617_novogodnjaja_elka_na_puti_k_cerkvi.jpg',
+  '/new-year-countdown/icons/apple-touch-icon.png',
+  '/new-year-countdown/icons/favicon-96x96.png',
+  '/new-year-countdown/icons/web-app-manifest-192x192.png',
+  '/new-year-countdown/icons/web-app-manifest-512x512.png',
+  '/new-year-countdown/icons/favicon.svg',
+  '/new-year-countdown/icons/favicon.ico'
 ];
 
 // Установка Service Worker
@@ -58,7 +58,7 @@ self.addEventListener('fetch', event => {
       })
       .catch(() => {
         // Офлайн fallback
-        return caches.match('/Index.html');
+        return caches.match('/new-year-countdown/Index.html');
       })
   );
 });

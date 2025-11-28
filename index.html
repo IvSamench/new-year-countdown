@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- PWA манифест -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/new-year-countdown/manifest.json">
     
     <!-- Мета-теги для PWA -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -17,12 +17,12 @@
     <meta name="description" content="Таймер обратного отсчёта до Нового Года">
     
     <!-- Иконки для iOS и браузеров -->
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/web-app-manifest-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="icons/web-app-manifest-512x512.png">
-    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
-    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" href="/new-year-countdown/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/new-year-countdown/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/new-year-countdown/icons/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/new-year-countdown/icons/web-app-manifest-512x512.png">
+    <link rel="icon" type="image/svg+xml" href="/new-year-countdown/icons/favicon.svg">
+    <link rel="shortcut icon" href="/new-year-countdown/icons/favicon.ico">
     
     <title>Отсчёт до Нового Года</title>
     <link rel="stylesheet" href="styles.css">
@@ -35,7 +35,7 @@
     <div class="mobile-control">
         <button class="fullscreen-btn" title="Полноэкранный режим">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-               
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
             </svg>
         </button>
     </div>
@@ -70,7 +70,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('/new-year-countdown/sw.js')
                     .then(registration => {
                         console.log('Service Worker зарегистрирован:', registration.scope);
                     })
