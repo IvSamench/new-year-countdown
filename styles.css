@@ -13,6 +13,10 @@ body {
 }
 
 .container {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     text-align: center;
     padding: 2rem;
     z-index: 10;
@@ -93,4 +97,83 @@ h1 {
     text-align: center;
     font-size: 20px;
     border: 2px solid white;
+}
+
+.fullscreen-btn {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.mobile-control{
+    display: none;
+}
+.mobile-control-animation {
+    animation: fadeOut 3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.mobile-control-animation-reverse{
+    animation: fadeIn 1.5s ease-out forwards;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+     
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.fullscreen-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.fullscreen-btn::before,
+.fullscreen-btn::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+}
+
+.fullscreen-btn::before {
+    top: 6px;
+    left: 6px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.fullscreen-btn::after {
+    bottom: 6px;
+    right: 6px;
+    border-left: none;
+    border-top: none;
 }
