@@ -2,7 +2,7 @@
   "name": "Отсчёт до Нового Года",
   "short_name": "Новый Год",
   "description": "Таймер обратного отсчёта до Нового Года с полноэкранным режимом",
-  "start_url": "./Index.html",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "fullscreen",
   "orientation": "landscape",
