@@ -56,3 +56,41 @@ h1 {
     letter-spacing: 1px;
 }
 
+@media screen and (orientation: portrait) {
+  .container {
+    display: none;
+  }
+
+  .warning {
+    display: flex !important;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .warning {
+    display: none !important;
+  }
+}
+
+.warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.rotate-warning {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid white;
+}
