@@ -1,7 +1,7 @@
 const CACHE_NAME = 'new-year-countdown-v1';
 const urlsToCache = [
   '/new-year-countdown/',
-  '/new-year-countdown/Index.html',
+  '/new-year-countdown/index.html',
   '/new-year-countdown/styles.css',
   '/new-year-countdown/manifest.json',
   '/new-year-countdown/scripts/script.js',
