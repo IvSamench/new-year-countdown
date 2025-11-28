@@ -27,79 +27,79 @@ function checkOrientation() {
 window.addEventListener('resize', checkOrientation);
 window.addEventListener('load', checkOrientation);
 
-// полноэкранный режим 
-function requestFullscreen() {
-    const element = document.documentElement;
+// // полноэкранный режим 
+// function requestFullscreen() {
+//     const element = document.documentElement;
 
-    if (element.requestFullscreen) {
-        element.requestFullscreen();
-    } else if (element.webkitRequestFullscreen) {
-        element.webkitRequestFullscreen(); // Safari
-    } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen(); // Firefox
-    } else if (element.msRequestFullscreen) {
-        element.msRequestFullscreen(); // IE/Edge
-    }
-}
+//     if (element.requestFullscreen) {
+//         element.requestFullscreen();
+//     } else if (element.webkitRequestFullscreen) {
+//         element.webkitRequestFullscreen(); // Safari
+//     } else if (element.mozRequestFullScreen) {
+//         element.mozRequestFullScreen(); // Firefox
+//     } else if (element.msRequestFullscreen) {
+//         element.msRequestFullscreen(); // IE/Edge
+//     }
+// }
 
-// выход из полноэкранного
-function exitFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen(); // Safari
-    } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen(); // Firefox
-    } else if (document.msExitFullscreen) {
-        document.msExitFullscreen(); // IE/Edge
-    }
-}
-//Проверка какой экран
-function isFullscreen() {
+// // выход из полноэкранного
+// function exitFullscreen() {
+//     if (document.exitFullscreen) {
+//         document.exitFullscreen();
+//     } else if (document.webkitExitFullscreen) {
+//         document.webkitExitFullscreen(); // Safari
+//     } else if (document.mozCancelFullScreen) {
+//         document.mozCancelFullScreen(); // Firefox
+//     } else if (document.msExitFullscreen) {
+//         document.msExitFullscreen(); // IE/Edge
+//     }
+// }
+// //Проверка какой экран
+// function isFullscreen() {
 
-    return !!(
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement);
+//     return !!(
+//         document.fullscreenElement ||
+//         document.webkitFullscreenElement ||
+//         document.mozFullScreenElement ||
+//         document.msFullscreenElement);
 
-}
-
-
-// Переключение полноэкранного режима
-function toggleFullscreen() {
-    if (isFullscreen()) {
-        exitFullscreen();
-        mobileControl.classList.add('mobile-control-animation')
-    } else {
-        requestFullscreen();
-        mobileControl.classList.add('mobile-control-animation')
-
-    }
-}
-
-document.addEventListener('touchstart', function (event) {
-    console.log('Касание экрана');
-    mobileControl.classList.remove('mobile-control-animation')
-    mobileControl.classList.add('mobile-control-animation-reverse')
-    setTimeout(() => {
-        mobileControl.classList.remove('mobile-control-animation-reverse')
-        mobileControl.classList.add('mobile-control-animation')
-    }, 1500)
-});
+// }
 
 
+// // Переключение полноэкранного режима
+// function toggleFullscreen() {
+//     if (isFullscreen()) {
+//         exitFullscreen();
+//         mobileControl.classList.add('mobile-control-animation')
+//     } else {
+//         requestFullscreen();
+//         mobileControl.classList.add('mobile-control-animation')
 
-//событие переключателя
-fullScreenBtn.addEventListener('click', function () {
-    toggleFullscreen();
+//     }
+// }
 
-});
+// document.addEventListener('touchstart', function (event) {
+//     console.log('Касание экрана');
+//     mobileControl.classList.remove('mobile-control-animation')
+//     mobileControl.classList.add('mobile-control-animation-reverse')
+//     setTimeout(() => {
+//         mobileControl.classList.remove('mobile-control-animation-reverse')
+//         mobileControl.classList.add('mobile-control-animation')
+//     }, 1500)
+// });
 
-// Скрыть адресную строку на мобильных 
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        window.scrollTo(0, 1);
-        console.log("Сработало")
-    }, 0);
-});
+
+
+// //событие переключателя
+// fullScreenBtn.addEventListener('click', function () {
+//     toggleFullscreen();
+
+// });
+
+// // Скрыть адресную строку на мобильных 
+// window.addEventListener('load', () => {
+//     setTimeout(() => {
+//         window.scrollTo(0, 1);
+//         console.log("Сработало")
+//     }, 0);
+// });
