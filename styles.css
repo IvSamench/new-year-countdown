@@ -3,13 +3,17 @@ body {
     background-image:url(images/99px_ru_wallpaper_354617_novogodnjaja_elka_na_puti_k_cerkvi.jpg);
     background-size: 100%;
     min-height: 100vh;
+    min-height: -webkit-fill-available; /* Для iOS Safari */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
     overflow: hidden;
-    position: relative;
+}
+
+html {
+    height: -webkit-fill-available;
 }
 
 .container {

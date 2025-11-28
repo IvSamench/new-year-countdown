@@ -33,13 +33,12 @@ function requestFullscreen() {
 
     if (element.requestFullscreen) {
         element.requestFullscreen();
-
     } else if (element.webkitRequestFullscreen) {
-        element.webkitRequestFullscreen()// Safari
-    } else if (elem.mozRequestFullScreen) {
-        elem.mozRequestFullScreen();// Firefox
-    } else if (elem.msRequestFullscreen) {
-        elem.msRequestFullscreen();// IE/Edge
+        element.webkitRequestFullscreen(); // Safari
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen(); // Firefox
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen(); // IE/Edge
     }
 }
 
@@ -101,5 +100,6 @@ fullScreenBtn.addEventListener('click', function () {
 window.addEventListener('load', () => {
     setTimeout(() => {
         window.scrollTo(0, 1);
+        console.log("Сработало")
     }, 0);
 });
