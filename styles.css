@@ -238,4 +238,61 @@ h1 {
     transform: scale(1.1);
 }
 
+/* Кнопка управления звуком */
+.mobile-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.sound-button {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.sound-button:hover {
+    transform: scale(1.1);
+}
+
+.sound-button:active {
+    transform: scale(0.95);
+}
+
+.sound-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    display: none;
+}
+
+.sound-icon.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .mobile-control {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .sound-button {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .sound-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
 

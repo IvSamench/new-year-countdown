@@ -2,6 +2,56 @@ const mobileControl = document.querySelector('.mobile-control')
 const fullScreenBtn = document.querySelector('.fullscreen-btn')
 const warning = document.querySelector('.rotate-warning');
 
+const audio = new Audio ("https://stream.thechristmasstation.org/main/64.aac?refresh=1764426639303")
+audio.volume = 1; // громкость 100%
+
+// Состояние звука
+let soundEnabled = false; // По умолчанию 
+
+// кнопки звука
+const soundToggle = document.getElementById('soundToggle');
+const soundOnIcon = document.getElementById('soundOn');
+const soundOffIcon = document.getElementById('soundOff');
+
+// переключения звука
+function toggleSound() {
+    soundEnabled = !soundEnabled;
+    
+    if (soundEnabled) {
+        audio.play().catch(e => console.log('Ошибка воспроизведения:', e));
+        soundOnIcon.classList.add('active');
+        soundOffIcon.classList.remove('active');
+    } else {
+        audio.pause();
+        soundOnIcon.classList.remove('active');
+        soundOffIcon.classList.add('active');
+    }
+    
+    // настройку в localStorage
+    localStorage.setItem('soundEnabled', soundEnabled);
+}
+
+// Восстанавливаем настройку звука из localStorage
+window.addEventListener('load', () => {
+    const savedSound = localStorage.getItem('soundEnabled');
+    if (savedSound !== null) {
+        soundEnabled = savedSound === 'true';
+    }
+    
+    if (soundEnabled) {
+        audio.play().catch(e => console.log('Ошибка автовоспроизведения:', e));
+        soundOnIcon.classList.add('active');
+        soundOffIcon.classList.remove('active');
+    } else {
+        soundOnIcon.classList.remove('active');
+        soundOffIcon.classList.add('active'); // Показываем иконку выключенного звука
+    }
+});
+
+// Обработчик клика на кнопку
+soundToggle.addEventListener('click', toggleSound);
+
+
 
 
 //проверка оринтации и устройств
@@ -9,15 +59,14 @@ function checkOrientation() {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     if (window.innerHeight > window.innerWidth) {
         warning.style.display = 'flex';
-        mobileControl.style.display = 'none'
+        mobileControl.style.display = 'flex'
         console.log('Показываем предупреждение')
     } else {
         warning.style.display = 'none';
+        mobileControl.style.display = 'flex' // Кнопка звука всегда видна
         if (isMobile) {
-            mobileControl.style.display = 'block'
             console.log('Устройство:Мобильное')
         } else {
-            mobileControl.style.display = 'none'
             console.log('Устройство:ПК')
         }
         console.log('Скрываем предупреждение')
