@@ -41,3 +41,16 @@ function getUserTimeZone() {
     });
 }
 
+
+getUserCityCountry()
+   .then(location => {
+    const h1 = document.querySelector('h1');
+    h1.textContent = `До Нового Года в ${location.city} осталось`;
+  })
+  .catch(err => {
+    console.log('Не удалось определить город:', err);
+   
+  });
+
+console.log(getUserTimeZone())
+
