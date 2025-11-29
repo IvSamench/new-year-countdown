@@ -1,5 +1,5 @@
 // Получение текущего времени пользователя
-export function getUserTime() {
+ function getUserTime() {
     const now = new Date();
     return now.toLocaleTimeString([], {
         year: 'numeric',
@@ -12,12 +12,12 @@ export function getUserTime() {
 }
 
 // Получение часового пояса пользователя
-export function getUserTimeZone() {
+function getUserTimeZone() {
     return Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
 
 // Получение местоположения пользователя
-export async function getUserCityCountry() {
+ async function getUserCityCountry() {
     return new Promise((resolve, reject) => {
         if (!navigator.geolocation) {
             reject('Геолокация не поддерживается');
