@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+
     <!-- PWA манифест -->
     <link rel="manifest" href="/new-year-countdown/manifest.json">
-    
+
     <!-- Мета-теги для PWA -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-title" content="Новый Год">
     <meta name="theme-color" content="#1a472a">
     <meta name="description" content="Таймер обратного отсчёта до Нового Года">
-    
+
     <!-- Иконки для iOS и браузеров -->
     <link rel="apple-touch-icon" href="/new-year-countdown/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/new-year-countdown/icons/favicon-96x96.png">
@@ -23,58 +23,72 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/new-year-countdown/icons/web-app-manifest-512x512.png">
     <link rel="icon" type="image/svg+xml" href="/new-year-countdown/icons/favicon.svg">
     <link rel="shortcut icon" href="/new-year-countdown/icons/favicon.ico">
-    
+
     <title>Отсчёт до Нового Года</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="warning">
-        <div class="rotate-warning">Поверните устройство горизонтально</div>
-    </div>
-    <div class="mobile-control">
-        <button id="soundToggle" class="sound-button" aria-label="Переключить звук">
-            <!-- Иконка звука включен -->
-            <svg id="soundOn" class="sound-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
-                <path d="M15.54 8.46a5 5 0 0 1 0 7.07M18.07 5.93a9 9 0 0 1 0 12.73" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <!-- Иконка звука выключен -->
-            <svg id="soundOff" class="sound-icon active" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
-                <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        </button>
-    </div>
-
-    <div class="container">
-        <h1>До Нового Года осталось</h1>
+    <video class="final" preload="auto">
+        <source src="video/new-year.mp4" type="video/mp4">
+        <source src="video/new-year.webm" type="video/webm">
         
-        <div class="countdown">
-            <div class="time-block">
-                <span id="days">00</span>
-                <p>Дней</p>
-            </div>
-            <div class="time-block">
-                <span id="hours">00</span>
-                <p>Часов</p>
-            </div>
-            <div class="time-block">
-                <span id="minutes">00</span>
-                <p>Минут</p>
-            </div>
-            <div class="time-block">
-                <span id="seconds">00</span>
-                <p>Секунд</p>
+    </video>
+    <div class="content">
+        <div class="warning">
+            <div class="rotate-warning">Поверните устройство горизонтально</div>
+        </div>
+        <div class="mobile-control">
+            <button id="soundToggle" class="sound-button" aria-label="Переключить звук">
+                <!-- Иконка звука включен -->
+                <svg id="soundOn" class="sound-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" fill="currentColor" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07M18.07 5.93a9 9 0 0 1 0 12.73" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <!-- Иконка звука выключен -->
+                <svg id="soundOff" class="sound-icon active" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" fill="currentColor" />
+                    <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                    <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="container">
+            <h1>До Нового Года осталось</h1>
+
+            <div class="countdown">
+                <div class="time-block">
+                    <span id="days">00</span>
+                    <p>Дней</p>
+                </div>
+                <div class="time-block">
+                    <span id="hours">00</span>
+                    <p>Часов</p>
+                </div>
+                <div class="time-block">
+                    <span id="minutes">00</span>
+                    <p>Минут</p>
+                </div>
+                <div class="time-block">
+                    <span id="seconds">00</span>
+                    <p>Секунд</p>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="scripts/script.js"></script>
     <script src="scripts/userTime.js"></script>
     <script src="scripts/countDown.js"></script>
     <script src="scripts/snow.js"></script>
-    
+
     <!-- Регистрация Service Worker для PWA -->
     <script>
         if ('serviceWorker' in navigator) {

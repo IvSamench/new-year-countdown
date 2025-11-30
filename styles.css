@@ -158,7 +158,14 @@ h1 {
     display: none !important;
   }
 }
-
+.final{
+    display: none;
+    visibility: hidden;
+}
+.content{
+    display: block;
+    visibility: visible;
+}
 .warning {
     position: fixed;
     top: 0;
